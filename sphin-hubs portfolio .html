@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sphin-hub Developer Portfolio</title>
+  <style>
+    /* CSS Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f4f8;
+      color: #333;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: #1e3a8a;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    nav {
+      background: #2563eb;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    h2 {
+      color: #1e3a8a;
+      margin-bottom: 1rem;
+    }
+    .project-card, .skill, .testimonial {
+      background: white;
+      margin-bottom: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 1rem;
+      transition: transform 0.3s;
+    }
+    .project-card:hover, .testimonial:hover {
+      transform: translateY(-5px);
+    }
+    .projects-grid, .skills-grid, .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    .project-card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .filter-buttons {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .filter-buttons button {
+      background: #3b82f6;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      margin: 0.25rem;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin: 0.5rem 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .contact-form button {
+      background: #1e40af;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    footer {
+      background: #1e3a8a;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sphin-hub</h1>
+    <p>Full-Stack Developer | JavaScript | React | Node.js</p>
+  </header>
+
+  <nav>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="filter-buttons">
+      <button onclick="filterProjects('all')">All</button>
+      <button onclick="filterProjects('frontend')">Frontend</button>
+      <button onclick="filterProjects('backend')">Backend</button>
+      <button onclick="filterProjects('fullstack')">Full Stack</button>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card" data-category="fullstack">
+        <img src="https://via.placeholder.com/400x200" alt="Project 1">
+        <h3>Project One</h3>
+        <p>A full-stack blog platform using React, Node.js, and MongoDB.</p>
+        <a href="#">Live Demo</a> | <a href="#">GitHub</a>
+      </div>
+      <div class="project-card" data-category="frontend">
+        <img src="https://via.placeholder.com/400x200" alt="Project 2">
+        <h3>Project Two</h3>
+        <p>Responsive e-commerce site built with HTML, CSS, and JavaScript.</p>
+        <a href="#">Live Demo</a> | <a href="#">GitHub</a>
+      </div>
+      <div class="project-card" data-category="backend">
+        <img src="https://via.placeholder.com/400x200" alt="Project 3">
+        <h3>Project Three</h3>
+        <p>RESTful API service developed in Node.js and Express.js.</p>
+        <a href="#">Live Demo</a> | <a href="#">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill">HTML5</div>
+      <div class="skill">CSS3</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">React.js</div>
+      <div class="skill">Node.js</div>
+      <div class="skill">MongoDB</div>
+      <div class="skill">Express.js</div>
+      <div class="skill">Git & GitHub</div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <h2>Testimonials</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <p>"Jane transformed our web presence with a sleek and scalable platform. Highly recommend!"</p>
+        <strong>- Client A</strong>
+      </div>
+      <div class="testimonial">
+        <p>"Working with Jane was a game-changer for our startup. Her full-stack skills are top-notch."</p>
+        <strong>- Client B</strong>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form class="contact-form" onsubmit="return validateForm()">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Jane Doe | Full-Stack Developer</p>
+  </footer>
+
+  <script>
+    function filterProjects(category) {
+      const cards = document.querySelectorAll('.project-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function validateForm() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !email || !message) {
+        alert("Please fill in all fields.");
+        return false;
+      }
+
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!email.match(emailPattern)) {
+        alert("Please enter a valid email address.");
+        return false;
+      }
+
+      alert("Thank you for reaching out! I'll get back to you soon.");
+      return true;
+    }
+  </script>
+</body>
+</html>
